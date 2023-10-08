@@ -1,0 +1,57 @@
+.logo{
+    height:40px;
+    margin:10px;
+}
+.hamburger{
+    cursor: pointer;
+    height:40px;
+    margin:10px;
+}
+.NavBarBackground{
+    background-color: rgb(132, 46, 206);
+}
+.NavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+.MobileNavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.RowFlex{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+@media only screen and (max-width: 700px){
+    .title{
+        display: none;
+    }
+    #nav-list{
+    justify-content: flex-end;
+    } 
+}
+.navList{
+    animation: nav 2s ease;
+    flex-direction: row;
+    display: flex;
+    justify-items: center;
+    align-items:center;
+    gap: 10px;
+}
+
+.navItem {
+    text-decoration: none;
+    margin: 10px;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.navItem p:hover{
+    color: orange;
+}

@@ -1,27 +1,35 @@
-import React, { ReactNode } from "react";
 import { Socials } from "./widgets/socials";
 import classes from "./about.module.css";
+import useIsAbsoluteAppBar from "../../hooks/useAbsoluteAppBar";
+import { navBarId } from "../nav-bar/nav-bar";
 
-export default class About extends React.Component {
-  constructor(props: {}) {
-    super(props);
-    this.state = { color: "red" };
+export default function About() {
+  const isAbsoluteAppBar = useIsAbsoluteAppBar();
+  let margin: number = 0
+
+  if (isAbsoluteAppBar === true) {
+    let navBar = document.getElementById(navBarId);
+
+    if (navBar) {
+      margin = 2.5 * navBar.offsetHeight;
+    }
   }
 
-  render(): ReactNode {
-    return (
-      <section className={classes.About}>
-        <div className="hero-area">
-          <div className="hero-text">
-            <h1>Przemysław Klejno</h1>
-            <p>Full Stack Developer</p>
-            <a href="#about-me">
-              <div className="button">About me</div>
-            </a>
-          </div>
-          <Socials />
+  return (
+    <section
+      style={{
+        marginTop: margin
+      }} 
+      className={classes.About} id={aboutSectionId}>
+      <div className="hero-area">
+        <div className="hero-text">
+          <h1>Przemysław Klejno</h1>
+          <p>Full Stack Developer</p>
         </div>
-      </section>
-    );
-  }
+        <Socials />
+      </div>
+    </section>
+  );
 }
+
+export const aboutSectionId = "aboutSection";

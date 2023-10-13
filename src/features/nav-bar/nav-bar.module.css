@@ -55,3 +55,10 @@
 .navItem p:hover{
     color: orange;
 }
+
+.absoluteNavBar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background:rgba(132, 46, 206,0.5);
+}

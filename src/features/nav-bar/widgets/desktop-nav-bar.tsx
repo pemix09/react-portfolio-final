@@ -4,6 +4,9 @@ import AboutMeIcon from "../../../assets/about.svg";
 import ProjectsIcon from "../../../assets/projects.svg";
 import ContactIcon from "../../../assets/contact.svg";
 import CodingIcon from "../../../assets/codingIcon.svg"
+import { contactSectionId } from "../../contact/contact";
+import { experienceSectionId } from "../../experience/experience";
+import { aboutSectionId } from "../../about/about";
 
 export default function DesktopNavBar(): JSX.Element {
   return (
@@ -16,15 +19,15 @@ export default function DesktopNavBar(): JSX.Element {
         <NavItem 
             title="About me"
             iconPath={AboutMeIcon}
-            pageId="dsa"/>
+            pageId={aboutSectionId}/>
         <NavItem
             title="Experience"
             iconPath={ProjectsIcon}
-            pageId="experiencePage"/>
+            pageId={experienceSectionId}/>
         <NavItem
             title="Contact me"
             iconPath={ContactIcon}
-            pageId="dsa"/>
+            pageId={contactSectionId}/>
       </ul>
     </nav>
   );

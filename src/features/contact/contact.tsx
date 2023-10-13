@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <footer id="contact">
+    <footer id={contactSectionId}>
       <h2>Skontaktuj się ze mną</h2>
       <p>
         Email: pemix09@onet.pl
@@ -10,3 +10,5 @@ export default function Contact() {
     </footer>
   );
 }
+
+export const contactSectionId: string = "contact";

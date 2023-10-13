@@ -1,10 +1,31 @@
+import useIsMobile from "../../hooks/useIsMobile";
 import About from "./about/about";
 import Contact from "./contact/contact";
 import Experience from "./experience/experience";
+import classes from "./sections.module.css";
+import { desktopNavBarId } from "../nav-bar/widgets/desktop-nav-bar";
 
 export default function Sections() {
+  const isMobile = useIsMobile();
+  let leftMargin: number = 0;
+
+  if (isMobile === false) {
+    let navBar = document.getElementById(desktopNavBarId);
+
+    if (navBar) {
+        leftMargin = navBar.offsetWidth;
+    }
+  } else {
+    leftMargin = 0;
+  }
+
   return (
-    <div id={sectionsId}>
+    <div 
+        style={{
+            marginLeft: leftMargin
+        }}
+        id={sectionsId} 
+        className="classes.SectionsDiv">
       <About />
       <Experience />
       <Contact />

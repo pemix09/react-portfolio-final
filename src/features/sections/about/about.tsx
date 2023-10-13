@@ -18,7 +18,7 @@ export default function About() {
   return (
     <section
       style={{
-        marginTop: margin
+        marginTop: margin,
       }} 
       className={classes.About} id={aboutSectionId}>
       <div className="hero-area">

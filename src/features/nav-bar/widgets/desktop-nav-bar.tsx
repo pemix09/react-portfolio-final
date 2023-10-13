@@ -11,7 +11,9 @@ import { sectionsId } from "../../sections/sections";
 
 export default function DesktopNavBar(): JSX.Element {
   return (
-    <nav className={`${classes.NavBar} ${classes.NavBarBackground}`}>
+    <nav 
+      id={desktopNavBarId}
+      className={`${classes.NavBar} ${classes.NavBarBackground}`}>
       <NavItem
         title="Przemysław Klejno"
         iconPath={CodingIcon}
@@ -34,3 +36,5 @@ export default function DesktopNavBar(): JSX.Element {
     </nav>
   );
 }
+
+export const desktopNavBarId = "desktopNavBarId";

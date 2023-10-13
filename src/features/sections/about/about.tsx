@@ -1,7 +1,7 @@
 import { Socials } from "./widgets/socials";
 import classes from "./about.module.css";
-import useIsAbsoluteAppBar from "../../hooks/useAbsoluteAppBar";
-import { navBarId } from "../nav-bar/nav-bar";
+import useIsAbsoluteAppBar from "../../../hooks/useAbsoluteAppBar";
+import { navBarId } from "../../nav-bar/nav-bar";
 
 export default function About() {
   const isAbsoluteAppBar = useIsAbsoluteAppBar();

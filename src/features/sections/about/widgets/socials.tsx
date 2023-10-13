@@ -1,8 +1,8 @@
 import React from "react";
 import { ReactNode } from "react";
-import GithubLogo from "../../../assets/iconmonstr-github-4.svg";
-import FacebookLogo from "../../../assets/iconmonstr-facebook-4.svg";
-import LinkedInLogo from "../../../assets/iconmonstr-linkedin-4.svg";
+import GithubLogo from "../../../../assets/iconmonstr-github-4.svg";
+import FacebookLogo from "../../../../assets/iconmonstr-facebook-4.svg";
+import LinkedInLogo from "../../../../assets/iconmonstr-linkedin-4.svg";
 import SocialIcon from "./social-icon";
 
 export class Socials extends React.Component {

@@ -12,7 +12,13 @@ export default function NavItem(props: NavItemProps) {
   return (
     <li className={classes.navItem}>
         <div className={classes.RowFlex} onClick={handleClick}>
-          <img src={props.iconPath} alt={props.title} />
+          <img 
+            style={{
+              width: 40,
+            }}
+            src={props.iconPath} 
+            alt={props.title} 
+            />
           <p className={classes.title}>{props.title}</p>
         </div>
     </li>

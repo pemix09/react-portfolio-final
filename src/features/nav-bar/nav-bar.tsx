@@ -8,6 +8,12 @@ export default function NavBar() {
   const isMobile: boolean = useIsMobile();
   const isAbsoluteAppBar = useIsAbsoluteAppBar();
 
+  let className = `${classes.NavBarBackground}`;
+
+  if (isAbsoluteAppBar && isMobile) {
+    className += ` ${classes.absoluteNavBar}`
+  }
+
   function renderNavBar() {
     if (isMobile) {
       return <MobileNavBar/>
@@ -16,11 +22,7 @@ export default function NavBar() {
     }
   }
 
-  let className = `${classes.NavBarBackground}`;
-
-  if (isAbsoluteAppBar) {
-    className += ` ${classes.absoluteNavBar}`
-  }
+ 
       
   return <header 
     id={navBarId} 

@@ -1,17 +1,13 @@
 import React from 'react';
 import './App.css';
-import About from './features/about/about';
 import NavBar from './features/nav-bar/nav-bar';
-import Contact from './features/contact/contact';
-import Experience from './features/experience/experience';
+import Sections from './features/sections/sections';
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      <About/>
-      <Experience/>
-      <Contact/>
+      <Sections/>
     </div>
   );
 }

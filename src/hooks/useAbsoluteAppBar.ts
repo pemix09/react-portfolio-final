@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { navBarId } from "../features/nav-bar/nav-bar";
 
 export default function useIsAbsoluteAppBar() {
     const [isAbsoluteAppBar, setIsAbsoluteAppBar] = useState(false);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         let handleScroll = () => {
             let scrollPos: number = window.scrollY;
             let navBar = document.getElementById(navBarId);

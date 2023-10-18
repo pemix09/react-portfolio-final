@@ -4,8 +4,11 @@ import Contact from "./contact/contact";
 import Experience from "./experience/experience";
 import classes from "./sections.module.css";
 import { desktopNavBarId } from "../nav-bar/widgets/desktop-nav-bar";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 export default function Sections() {
+  //hook used to rerender on screen change, nothing else!
+  const windowSize = useWindowSize();
   const isMobile = useIsMobile();
   let leftMargin: number = 0;
 

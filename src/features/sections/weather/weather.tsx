@@ -1,7 +1,9 @@
+import CityInput from "./components/cityInput";
+
 export default function Weather() {
     return (
         <div>
-            <h1>Weather</h1>
+            <CityInput/>
         </div>
     );
 }

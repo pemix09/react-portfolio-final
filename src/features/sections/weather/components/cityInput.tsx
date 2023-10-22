@@ -1,10 +1,26 @@
-import classes from "./cityInput.module.css";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { useMemo, useState } from 'react';
 
-export default function CityInput() {
+export interface CityInputProps {
+  onSearch: (city: string) => void;
+}
+
+export default function CityInput(props: CityInputProps) {
+  const [searchingInput, setSearchingInput] = useState("");
+
   return (
-    <div>
-      <input className={classes.cityInput} type="text" placeholder="Enter city name"/>
-      <button>Search</button>
-    </div>
+    <InputGroup className="mb-3"> 
+        <Form.Control
+          placeholder="Searched city"
+          aria-label="Searched city"
+          aria-describedby="Searched city"
+          onChange={(event) => setSearchingInput(event.target.value)}
+        />
+        <Button variant="outline-secondary" id="searchButton" onClick={(e) => props.onSearch(searchingInput)}>
+          Search
+        </Button>
+      </InputGroup>
   );
 }

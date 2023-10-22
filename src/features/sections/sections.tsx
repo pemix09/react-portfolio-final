@@ -30,9 +30,9 @@ export default function Sections() {
         }}
         id={sectionsId} 
         className="classes.SectionsDiv">
-      <Weather />
       <About />
       <Experience />
+      <Weather />
       <Contact />
     </div>
   );

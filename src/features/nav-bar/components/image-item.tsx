@@ -1,5 +1,4 @@
 import classes from "../nav-bar.module.css";
-import { desktopNavBarId } from "./desktop-nav-bar";
 
 export type ImageItemProps = {
   src: string;

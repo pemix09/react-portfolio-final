@@ -5,8 +5,7 @@ export default function useIsMobile() {
 
     useLayoutEffect(() => {
         function reactToResize() {
-            console.debug(`Windows width: ${window.innerWidth}`);
-            if (window.innerWidth > 700) {
+            if (window.innerWidth > 1130) {
                 setIsMobile(false);
             } else {
                 setIsMobile(true);

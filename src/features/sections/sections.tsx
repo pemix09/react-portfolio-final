@@ -2,8 +2,9 @@ import useIsMobile from "../../hooks/useIsMobile";
 import About from "./about/about";
 import Contact from "./contact/contact";
 import Experience from "./experience/experience";
+import Weather from "./weather/weather";
 import classes from "./sections.module.css";
-import { desktopNavBarId } from "../nav-bar/widgets/desktop-nav-bar";
+import { desktopNavBarId } from "../nav-bar/components/desktop-nav-bar";
 import { useWindowSize } from "../../hooks/useWindowSize";
 
 export default function Sections() {
@@ -29,6 +30,7 @@ export default function Sections() {
         }}
         id={sectionsId} 
         className="classes.SectionsDiv">
+      <Weather />
       <About />
       <Experience />
       <Contact />

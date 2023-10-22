@@ -1,23 +1,15 @@
-import classes from "../nav-bar.module.css";
 import NavItem from "./nav-item";
 import AboutMeIcon from "../../../assets/about.svg";
 import ProjectsIcon from "../../../assets/projects.svg";
 import ContactIcon from "../../../assets/contact.svg";
-import CodingIcon from "../../../assets/codingIcon.svg";
 import { contactSectionId } from "../../sections/contact/contact";
 import { aboutSectionId } from "../../sections/about/about";
 import { experienceSectionId } from "../../sections/experience/experience";
-import { sectionsId } from "../../sections/sections";
+import classes from "../nav-bar.module.css";
 
-export default function DesktopNavBar(): JSX.Element {
+export default function DesktopNavItems() {
   return (
-    <nav 
-      id={desktopNavBarId}
-      className={`${classes.NavBar} ${classes.NavBarBackground}`}>
-      <NavItem
-        title="Przemysław Klejno"
-        iconPath={CodingIcon}
-        pageId={sectionsId}/>
+    <div className={classes.DesktopNavBarItems}>
       <NavItem
         title="About me"
         iconPath={AboutMeIcon}
@@ -33,8 +25,6 @@ export default function DesktopNavBar(): JSX.Element {
         iconPath={ContactIcon}
         pageId={contactSectionId}
       />
-    </nav>
+    </div>
   );
 }
-
-export const desktopNavBarId = "desktopNavBarId";

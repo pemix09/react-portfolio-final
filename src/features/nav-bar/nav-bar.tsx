@@ -1,6 +1,6 @@
 import useIsMobile from '../../hooks/useIsMobile';
-import DesktopNavBar from './widgets/desktop-nav-bar';
-import MobileNavBar from './widgets/mobile-nav-bar';
+import DesktopNavBar from './components/desktop-nav-bar';
+import MobileNavBar from './components/mobile-nav-bar';
 import classes from "./nav-bar.module.css";
 import useIsAbsoluteAppBar from '../../hooks/useAbsoluteAppBar';
 

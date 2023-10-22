@@ -13,16 +13,24 @@
 .NavBar{
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 30px;
+    padding-top: 20px;
     position: fixed;
     left: 0;
     top: 0;
-    width: 20vw;
+    width: 12vw;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     height: 100vh;
 }
+.DesktopNavBarItems {
+    display: flex;
+    flex-direction: column;
+    width:inherit;
+    gap: 5;
+    margin: 10px;
+}
+
 .MobileNavBar {
     display: flex;
     flex-direction: row;
@@ -64,4 +72,20 @@
     position: fixed;
     top: 0px;
     width: 100%;
+}
+
+.headshot{
+    width:100%;
+    border-radius: 50%;
+    border: 5px solid var(--bg_color);
+}
+
+.headshotContainer{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.headshotTitle{ 
+    margin: 5px;
 }

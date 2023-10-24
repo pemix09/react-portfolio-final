@@ -1,11 +1,11 @@
 export default function Contact() {
   return (
     <footer id={contactSectionId}>
-      <h2>Skontaktuj się ze mną</h2>
+      <h2>Contact me!</h2>
       <p>
-        Email: pemix09@onet.pl
+        Email: klejno.przemyslaw@gmail.com
         <br />
-        Numer telefonu: 728 180 680
+        Mobile: +48 728 180 680
       </p>
     </footer>
   );

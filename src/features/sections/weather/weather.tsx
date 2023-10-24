@@ -35,6 +35,7 @@ export default function Weather() {
   return (
     <section id={weatherSectionId}>
       <div className={classes.weatherInput}>
+        <h2>Search for the weather in polish cities example: poznan</h2>
         <CityInput onSearch={(city: string) => setSearchedCity(city)} />
         <WeatherResult data={searchResult} />
       </div>

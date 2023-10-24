@@ -10,9 +10,9 @@ function ResultTable(props: ResultTableProps) {
     <Table striped bordered hover>
       <thead>
         <tr>
-          <th>Nazwa stacji</th>
-          <th>Temperatura</th>
-          <th>Prędkość wiatru</th>
+          <th>Station name</th>
+          <th>Temperature</th>
+          <th>Wind speed</th>
         </tr>
       </thead>
       <tbody>

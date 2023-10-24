@@ -1,3 +1,22 @@
 .About{
     height: 100vh;
 }
+
+.socials {
+    display: flex;
+    flex-direction: row;
+}
+
+.eachSlideEffect > div {
+    display: block;
+    max-height:80vh;
+    max-width:80vw;
+    height:80vh;
+    width:auto;
+    background-size: cover;
+    margin: auto;
+  }
+
+  .slideTitle {
+    margin-top: 20px;
+  }

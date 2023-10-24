@@ -112,3 +112,14 @@
 .title {
     margin: 0;
 }
+
+.social {
+    width: 50px;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 10px;
+}

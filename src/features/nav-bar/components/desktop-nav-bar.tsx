@@ -2,6 +2,7 @@ import classes from "../nav-bar.module.css";
 import ImageItem from "./image-item";
 import ProfilePiture from "../../../assets/profil.png";
 import DesktopNavItems from "./desktop-nav-items";
+import { Socials } from "./socials";
 
 export default function DesktopNavBar(): JSX.Element {
   
@@ -14,6 +15,7 @@ export default function DesktopNavBar(): JSX.Element {
         src={ProfilePiture} 
         alt={"My profile picture"} />
       <DesktopNavItems/>
+      <Socials />
     </nav>
   );
 }

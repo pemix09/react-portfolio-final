@@ -4,6 +4,7 @@ import ProfilePiture from "../../../assets/profil.png";
 import DesktopNavItems from "./desktop-nav-items";
 
 export default function DesktopNavBar(): JSX.Element {
+  
   return (
     <nav
       id={desktopNavBarId}

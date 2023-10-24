@@ -2,6 +2,9 @@
     height:40px;
     margin:10px;
 }
+.logoTitle{
+    margin: 0;
+}
 .hamburger{
     cursor: pointer;
     height:40px;
@@ -27,8 +30,9 @@
     display: flex;
     flex-direction: column;
     width:inherit;
-    gap: 5;
+    gap: 10px;
     margin: 10px;
+    padding-left: 20px;
 }
 
 .MobileNavBar {
@@ -55,13 +59,17 @@
     display: flex;
     justify-items: center;
     align-items:center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .navItem {
     text-decoration: none;
     list-style-type: none;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
 }
 
 .navItem p:hover{
@@ -89,4 +97,18 @@
 
 .headshotTitle{ 
     margin: 5px;
+}
+
+.activeElement {
+    /* First, brightness(0) makes all image black, except transparent parts, which remain transparent.
+    Then, invert(1) makes the black parts white. */
+    color: white;
+    fill: white;
+}
+.activeImage {
+    filter: brightness(0) invert(1);
+}
+
+.title {
+    margin: 0;
 }

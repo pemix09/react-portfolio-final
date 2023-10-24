@@ -7,7 +7,7 @@ export default function MobileNavBar() {
     <nav className={classes.MobileNavBar}>
       <div className={classes.RowFlex}>
         <img className={classes.logo} src={CodingIcon} alt="" />
-        <p>Przemysław Klejno</p>
+        <p className={classes.logoTitle}>Przemysław Klejno</p>
       </div>
       <img className={classes.hamburger} src={HamburgerIcon} alt="" />
     </nav>

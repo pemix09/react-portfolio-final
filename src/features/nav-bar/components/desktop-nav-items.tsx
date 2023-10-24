@@ -8,30 +8,39 @@ import { aboutSectionId } from "../../sections/about/about";
 import { experienceSectionId } from "../../sections/experience/experience";
 import classes from "../nav-bar.module.css";
 import { weatherSectionId } from "../../sections/weather/weather";
+import useActiveSection from "../../../hooks/useActiveSection";
 
 export default function DesktopNavItems() {
+  const activeSection: string | null = useActiveSection();
+
   return (
-    <div className={classes.DesktopNavBarItems}>
+    <div id={desktopNavBarItemsId} className={classes.DesktopNavBarItems}>
       <NavItem
+        isActive={activeSection === aboutSectionId}
         title="About me"
         iconPath={AboutMeIcon}
         pageId={aboutSectionId}
       />
       <NavItem
+        isActive={activeSection === experienceSectionId}
         title="Experience"
         iconPath={ProjectsIcon}
         pageId={experienceSectionId}
       />
       <NavItem
-        title="Contact me"
-        iconPath={ContactIcon}
-        pageId={contactSectionId}
-      />
-      <NavItem
+        isActive={activeSection === weatherSectionId}
         title="Weather"
         iconPath={WeatherIcon}
         pageId={weatherSectionId}
       />
+      <NavItem
+        isActive={activeSection === contactSectionId}
+        title="Contact me"
+        iconPath={ContactIcon}
+        pageId={contactSectionId}
+      />
     </div>
   );
 }
+
+export const desktopNavBarItemsId = "desktopNavBarItemsId";

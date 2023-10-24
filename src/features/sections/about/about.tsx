@@ -41,7 +41,7 @@ function createSlidePictures(): ReactNode {
 
   return (
     <Slide
-        autoplay={false}>
+        autoplay={true}>
         <div className={classes.eachSlideEffect}>
           <div
             style={{

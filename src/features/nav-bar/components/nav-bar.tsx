@@ -3,13 +3,8 @@ import CodingIcon from "../../../assets/codingIcon.svg";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { aboutSectionId } from "../../sections/about/about";
-import { experienceSectionId } from "../../sections/experience/experience";
-import { contactSectionId } from "../../sections/contact/contact";
-import useActiveSection from "../../../hooks/useActiveSection";
 
-export default function NavBar() {
-    const activeSection: string | null = useActiveSection();
+export default function NavBar(props: React.PropsWithChildren) {
 
     return (
         <Navbar fixed="top" bg="dark" data-bs-theme="dark" className={classes.MobileNavBar}>
@@ -21,9 +16,7 @@ export default function NavBar() {
               </div>
             </Navbar.Brand>
             <Nav className="justify-content-end">
-              <Nav.Link active={activeSection === aboutSectionId} href={`#${aboutSectionId}`}>About me</Nav.Link>
-              <Nav.Link active={activeSection === experienceSectionId} href={`#${experienceSectionId}`}>My experience</Nav.Link>
-              <Nav.Link active={activeSection === contactSectionId} href={`#${contactSectionId}`}>Contact me</Nav.Link>
+              {props.children}
             </Nav>
           </Container>
         </Navbar>

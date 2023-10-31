@@ -1,38 +1,24 @@
-import useIsMobile from "../../hooks/useIsMobile";
 import About from "./about/about";
 import Contact from "./contact/contact";
 import Experience from "./experience/experience";
-import Weather from "./weather/weather";
-import classes from "./sections.module.css";
-import { desktopNavBarId } from "../nav-bar/components/desktop-nav-bar";
-import { useWindowSize } from "../../hooks/useWindowSize";
+import { navBarContainerId } from "../nav-bar/nav-bar-container";
 
 export default function Sections() {
-  //hook used to rerender on screen change, nothing else!
-  const windowSize = useWindowSize();
-  const isMobile = useIsMobile();
-  let leftMargin: number = 0;
+  let sectionsStyle: React.CSSProperties = {};
 
-  if (isMobile === false) {
-    let navBar = document.getElementById(desktopNavBarId);
+  let navBar = document.getElementById(navBarContainerId);
 
-    if (navBar) {
-        leftMargin = navBar.offsetWidth;
-    }
+  if (navBar) {
+    sectionsStyle.marginTop = navBar.offsetHeight;
   } else {
-    leftMargin = 0;
+    console.debug("NavBar not found, setting default margin-top");
+    sectionsStyle.marginTop = 100;
   }
 
   return (
-    <div 
-        style={{
-            marginLeft: leftMargin
-        }}
-        id={sectionsId} 
-        className="classes.SectionsDiv">
+    <div style={sectionsStyle} id={sectionsId} className="classes.SectionsDiv">
       <About />
       <Experience />
-      <Weather />
       <Contact />
     </div>
   );

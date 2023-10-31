@@ -1,9 +1,7 @@
 import classes from "./about.module.css";
-import useIsAbsoluteAppBar from "../../../hooks/useAbsoluteAppBar";
-import { navBarId } from "../../nav-bar/nav-bar";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import travelHatPhoto from '../../../assets/travel_hat.jpeg';
 import groupTravelPhoto from '../../../assets/group_travel.jpeg';
 import jumpPhoto from '../../../assets/jump.jpeg';
@@ -12,22 +10,8 @@ import graduationPhoto from '../../../assets/graduation.jpeg';
 const aboutMeTitleId = "aboutMeTitleId";
 
 export default function About() {
-  const isAbsoluteAppBar = useIsAbsoluteAppBar();
-  let margin: number = 0;
-
-  if (isAbsoluteAppBar === true) {
-    let navBar = document.getElementById(navBarId);
-
-    if (navBar) {
-      margin = 2.5 * navBar.offsetHeight;
-    }
-  }
-
   return (
     <section
-      style={{
-        marginTop: margin,
-      }}
       className={classes.About}
       id={aboutSectionId}
     >

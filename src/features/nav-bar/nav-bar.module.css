@@ -1,6 +1,7 @@
 .logo{
-    height:40px;
-    margin:10px;
+    height:40px;  
+    /* makes the image white   */
+    filter: brightness(0) invert(1); 
 }
 .logoTitle{
     margin: 0;
@@ -36,9 +37,9 @@
 }
 
 .MobileNavBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    width: 100%;
 }
 
 .RowFlex{

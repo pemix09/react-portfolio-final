@@ -48,8 +48,8 @@ export default function Experience() {
       <Chrono
         items={items}
         theme={{
-          primary: "rgba(132, 46, 206,0.5)",
-          cardBgColor: "rgba(132, 46, 206,0.5)",
+          primary: "rgb(33,37,41)",
+          cardBgColor: "rgba(33,37,41, 0.25)",
           secondary: 'orange',
           titleColor: "black",
           titleColorActive: "black",

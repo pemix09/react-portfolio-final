@@ -1,0 +1,38 @@
+.About{
+    min-height: 100vh;
+    padding: 50px;
+}
+
+.sthAboutMe {
+  transform: translateX(100vw);
+  transition: 1s ease;
+  margin: 20px;
+}
+
+.slideShow {
+  transform: translateX(-100vw);
+  transition: 1s ease;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+}
+
+.eachSlideEffect > div {
+    display: block;
+    max-height:70vh;
+    max-width:70vw;
+    height:70vh;
+    width:auto;
+    background-size: cover;
+    margin: auto;
+  }
+
+  .slideTitle {
+    margin-top: 20px;
+  }
+
+  .active {
+    transform: translateX(0);
+}

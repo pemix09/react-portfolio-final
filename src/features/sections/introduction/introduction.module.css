@@ -1,0 +1,46 @@
+
+
+.introductionSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 90vh;
+}
+
+.profileImage {
+    width: 50vh;
+    height: 50vh;
+    border-radius: 50%;
+    border: 1px solid black;
+    transition: 1s ease;
+    transition: 1s ease;
+    transform: translateX(100vw);
+}
+
+.introTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: 1s ease;
+    transform: translateX(-100vw);
+}
+
+.introText {
+    margin: 30px;
+    font-size: 30px;
+    margin: 0;
+    font-style: italic;
+    text-wrap: balance;
+}
+
+.skill {
+    font-style: italic;
+    margin: 0;
+}
+
+.active {
+    transform: translateX(0);
+}

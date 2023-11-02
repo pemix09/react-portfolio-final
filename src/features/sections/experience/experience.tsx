@@ -1,8 +1,8 @@
-import { TimelineProps } from "react-chrono/dist/models/TimelineModel";
+import { ISectionProps } from "../ISectionProps";
 import classes from "./experience.module.css";
 import { Chrono } from "react-chrono";
 
-export default function Experience() {
+export default function Experience(props: ISectionProps) {
   const items = [
     {
       title: "2019 - 2023  Bachelor Degree",
@@ -42,8 +42,10 @@ export default function Experience() {
     },
   ];
 
+  const isActiveClass = props.isActive ? classes.active : "";
+
   return (
-    <section className={classes.Experience} id={experienceSectionId}>
+    <section style={props.style} className={classes.Experience + " " + isActiveClass} id={experienceSectionId}>
       <h2>Experience</h2>
       <Chrono
         items={items}

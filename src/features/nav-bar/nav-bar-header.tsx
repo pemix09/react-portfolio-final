@@ -1,9 +1,10 @@
 import NavBar from "./components/nav-bar";
-import { aboutSectionId } from "../sections/about/about";
+import { slideShowSectionId } from "../sections/slideShow/slideShow";
 import { experienceSectionId } from "../sections/experience/experience";
 import { contactSectionId } from "../sections/contact/contact";
 import useActiveSection from "../../hooks/useActiveSection";
 import Nav from "react-bootstrap/esm/Nav";
+import { introductionSectionId } from "../sections/introduction/introduction";
 
 //this component is so called higher-rder component
 export default function NavBarHeader() {
@@ -13,8 +14,13 @@ export default function NavBarHeader() {
     <header id={navBarContainerId}>
       <NavBar>
         <Nav.Link
-          active={activeSection === aboutSectionId}
-          href={`#${aboutSectionId}`}>
+          active={activeSection === introductionSectionId}
+          href={`#${introductionSectionId}`}>
+          Introduction
+        </Nav.Link>
+        <Nav.Link
+          active={activeSection === slideShowSectionId}
+          href={`#${slideShowSectionId}`}>
           About me
         </Nav.Link>
         <Nav.Link

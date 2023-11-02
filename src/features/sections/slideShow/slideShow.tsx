@@ -1,4 +1,5 @@
-import classes from "./about.module.css";
+import classes from "./slideShow.module.css";
+import sectionStyles from "../sections.module.css";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { ReactNode } from "react";
@@ -6,26 +7,33 @@ import travelHatPhoto from '../../../assets/travel_hat.jpeg';
 import groupTravelPhoto from '../../../assets/group_travel.jpeg';
 import jumpPhoto from '../../../assets/jump.jpeg';
 import graduationPhoto from '../../../assets/graduation.jpeg';
+import { ISectionProps } from "../ISectionProps";
 
-const aboutMeTitleId = "aboutMeTitleId";
+const SlideShowId = "SlideShowId";
 
-export default function About() {
+export default function SlideShow(props: ISectionProps) {
+  const isActiveClass = props.isActive ? classes.active : "";
+  const classNames = classes.About + " " + sectionStyles[props.theme]; 
+  console.debug("SlideShow class names: "+classNames);
   return (
     <section
-      className={classes.About}
-      id={aboutSectionId}
+      style={props.style}
+      className={classNames}
+      id={slideShowSectionId}
     >
-      <h1 id={aboutMeTitleId}>About me</h1>
-      {createSlidePictures()}
+      <h1 className={classes.sthAboutMe + " " + isActiveClass} id={SlideShowId}>Something about me</h1>
+      {createSlidePictures(props.isActive)}
     </section>
   );
 }
 
-function createSlidePictures(): ReactNode {
+function createSlidePictures(isActive: boolean): ReactNode {
+  const isActiveClass = isActive ? classes.active : "";
 
   return (
     <Slide
-        autoplay={true}>
+      cssClass={classes.slideShow + " " + isActiveClass}
+        autoplay={isActive}>
         <div className={classes.eachSlideEffect}>
           <div
             style={{
@@ -69,4 +77,4 @@ function createSlidePictures(): ReactNode {
   );
 }
 
-export const aboutSectionId = "aboutSection";
+export const slideShowSectionId = "aboutSection";

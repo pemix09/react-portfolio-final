@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react'
 
+function getScreenOrientation(): ScreenOrientationType {
+  if (window.innerWidth > window.innerHeight) {
+    return 'landscape';
+  } else {
+    return 'portait';
+  }
+}
+
 const useScreenOrientation = () => {
-  const [orientation, setOrientation] = useState<ScreenOrientationType>('landscape');
+  const [orientation, setOrientation] = useState<ScreenOrientationType>(getScreenOrientation());
 
   const updateOrientation = (event: Event) => {
-    if (window.innerWidth > window.innerHeight) {
-      setOrientation('landscape');
-    } else {
-      setOrientation('portait');
-    }
+    setOrientation(getScreenOrientation());
   }
 
   useEffect(() => {

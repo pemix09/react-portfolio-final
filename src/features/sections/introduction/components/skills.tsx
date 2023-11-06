@@ -4,6 +4,7 @@ export function Skills(props: {isActive: boolean}) {
     const skillsStyle: React.CSSProperties = {
         transition: "1s ease",
         transform: props.isActive ? "translateX(0)" : "translateX(-100vw)",
+        marginTop: "20px",
     };
 
   return (

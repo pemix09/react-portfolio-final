@@ -12,9 +12,9 @@ export function IntroText(props: { isActive: boolean }) {
         <b>About me</b>
       </h1>
       <br />
-      <h3 className={styles.introText}>
+      <h5 className={styles.introText}>
         Hi! My name is Przemyslaw Klejno, I am software developer.
-      </h3>
+      </h5>
     </div>
   );
 }

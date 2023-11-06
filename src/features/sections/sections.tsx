@@ -13,11 +13,10 @@ export default function Sections() {
   console.debug("Active section: " + activeSection);
 
   if (navBar) {
-    console.debug("NavBar found, setting margin-top to navBar height + 100");
     sectionsStyle.marginTop = navBar.offsetHeight + 20;
   } else {
     console.debug("NavBar not found, setting default margin-top");
-    sectionsStyle.marginTop = 100;
+    sectionsStyle.marginTop = 50;
   }
 
   return (

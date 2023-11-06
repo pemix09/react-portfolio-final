@@ -31,9 +31,7 @@ function getViewBasedOnOrientation(
     return (
       <Col>
         <IntroText isActive={isActive} />
-        <br/>
         <ProfilePicture isActive={isActive} />
-        <br/>
         <Skills isActive={isActive} />
       </Col>
     );

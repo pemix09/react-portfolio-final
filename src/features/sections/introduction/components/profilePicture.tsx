@@ -5,6 +5,7 @@ export function ProfilePicture(props: {isActive: boolean}) {
     const profilePictureStyle: React.CSSProperties = {
         transition: "1s ease",
         transform: props.isActive ? "translateX(0)" : "translateX(100vw)",
+        margin: "20px"
     };
 
     return(

@@ -11,30 +11,32 @@ export default function NavBarHeader() {
   const activeSection: string | null = useActiveSection();
 
   return (
-    <header id={navBarContainerId}>
-      <NavBar>
-        <Nav.Link
-          active={activeSection === introductionSectionId}
-          href={`#${introductionSectionId}`}>
-          Introduction
-        </Nav.Link>
-        <Nav.Link
-          active={activeSection === slideShowSectionId}
-          href={`#${slideShowSectionId}`}>
-          About me
-        </Nav.Link>
-        <Nav.Link
-          active={activeSection === experienceSectionId}
-          href={`#${experienceSectionId}`}>
-          My experience
-        </Nav.Link>
-        <Nav.Link
-          active={activeSection === contactSectionId}
-          href={`#${contactSectionId}`}>
-          Contact me
-        </Nav.Link>
-      </NavBar>
-    </header>
+    <NavBar>
+      <Nav.Link
+        active={activeSection === introductionSectionId}
+        href={`#${introductionSectionId}`}
+      >
+        Introduction
+      </Nav.Link>
+      <Nav.Link
+        active={activeSection === slideShowSectionId}
+        href={`#${slideShowSectionId}`}
+      >
+        About me
+      </Nav.Link>
+      <Nav.Link
+        active={activeSection === experienceSectionId}
+        href={`#${experienceSectionId}`}
+      >
+        My experience
+      </Nav.Link>
+      <Nav.Link
+        active={activeSection === contactSectionId}
+        href={`#${contactSectionId}`}
+      >
+        Contact me
+      </Nav.Link>
+    </NavBar>
   );
 }
 

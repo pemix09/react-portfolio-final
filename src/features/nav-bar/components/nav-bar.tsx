@@ -3,6 +3,7 @@ import CodingIcon from "../../../assets/codingIcon.svg";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { navBarContainerId } from "../nav-bar-header";
 
 export default function NavBar(props: React.PropsWithChildren) {
   function goToTop() {
@@ -11,10 +12,14 @@ export default function NavBar(props: React.PropsWithChildren) {
 
   return (
     <Navbar
+      collapseOnSelect 
+      expand="lg"
+      id={navBarContainerId}
       fixed="top"
       bg="dark"
       data-bs-theme="dark"
-      className={classes.MobileNavBar}>
+      className="bg-body-tertiary"
+    >
       <Container>
         <Navbar.Brand href="#home" onClick={() => goToTop()}>
           <div className={classes.RowFlex}>
@@ -22,7 +27,10 @@ export default function NavBar(props: React.PropsWithChildren) {
             <p className={classes.logoTitle}>Przemysław Klejno</p>
           </div>
         </Navbar.Brand>
-        <Nav className="justify-content-end">{props.children}</Nav>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
+          <Nav>{props.children}</Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

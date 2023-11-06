@@ -1,10 +1,14 @@
-import ProfilePicturePath from "../../../assets/profil.png";
+import { Row, Col, Container } from "react-bootstrap";
+import useScreenOrientation, { ScreenOrientationType } from "../../../hooks/useScreenOrientation";
 import { ISectionProps } from "../ISectionProps";
+import { IntroText } from "./components/introText";
+import { ProfilePicture } from "./components/profilePicture";
+import { Skills } from "./components/skills";
 import styles from "./introduction.module.css";
 
 export default function About(props: ISectionProps) {
-  const isActiveClass = props.isActive ? styles.active : "";
-  console.debug("About isActive class: " + isActiveClass);
+  const orientation: ScreenOrientationType = useScreenOrientation();
+  console.debug("orientation: " + orientation);
 
   return (
     <section
@@ -12,31 +16,40 @@ export default function About(props: ISectionProps) {
       style={props.style}
       id={introductionSectionId}
     >
-      <div className={styles.introTitle + " " + isActiveClass}>
-        <h1 style={{textDecoration: "underline"}}>
-          <b>About me</b>
-        </h1>
-        <br />
-        <br />
-        <h3 className={styles.introText}>
-          Hi! My name is Przemyslaw Klejno, I am software developer.
-        </h3>
-        <br />
-        <br />
-        <h3>My technology stack: </h3>
-        <p className={styles.skill}>C#/.NET: ⭐⭐⭐⭐</p>
-        <p className={styles.skill}>React: ⭐⭐⭐⭐</p>
-        <p className={styles.skill}>JavaScript/TypeScript: ⭐⭐⭐⭐</p>
-        <p className={styles.skill}>Node: ⭐⭐⭐⭐</p>
-        <p className={styles.skill}>Flutter: ⭐⭐</p>
-      </div>
-      <img
-        className={styles.profileImage + " " + isActiveClass}
-        src={ProfilePicturePath}
-        alt="Przemyslaw Klejno"
-      />
+      <Container>
+        {getViewBasedOnOrientation(orientation, props.isActive)}
+      </Container>
     </section>
   );
+}
+
+function getViewBasedOnOrientation(
+  orientation: ScreenOrientationType,
+  isActive: boolean
+) {
+  if ( orientation === 'portait' ) {
+    return (
+      <Col>
+        <IntroText isActive={isActive} />
+        <br/>
+        <ProfilePicture isActive={isActive} />
+        <br/>
+        <Skills isActive={isActive} />
+      </Col>
+    );
+  } else {
+    return (
+      <Row>
+        <Col>
+          <IntroText isActive={isActive} />
+          <Skills isActive={isActive} />
+        </Col>
+        <Col>
+          <ProfilePicture isActive={isActive} />
+        </Col>
+      </Row>
+    );
+  }
 }
 
 export const introductionSectionId = "introductionSectionId";

@@ -14,7 +14,7 @@ export default function Sections() {
 
   if (navBar) {
     console.debug("NavBar found, setting margin-top to navBar height + 100");
-    sectionsStyle.marginTop = navBar.offsetHeight + 100;
+    sectionsStyle.marginTop = navBar.offsetHeight + 20;
   } else {
     console.debug("NavBar not found, setting default margin-top");
     sectionsStyle.marginTop = 100;

@@ -15,9 +15,10 @@ export default function useActiveSection() {
                 if (section instanceof HTMLElement) {
                     const elementTopPosition = section.offsetTop;
                     const elementBottomPosition = section.offsetTop + section.offsetHeight;
+                    const elementMiddlePosition = section.offsetTop + section.offsetHeight / 2;
                     const endOfScreenPosition = window.scrollY + window.innerHeight - 100;
         
-                    if (elementTopPosition <= endOfScreenPosition && elementBottomPosition > endOfScreenPosition) {
+                    if (endOfScreenPosition > elementMiddlePosition) {
                         setActieSection(section.id);
                     }
                 }

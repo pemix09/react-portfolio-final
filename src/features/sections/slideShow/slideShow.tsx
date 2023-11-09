@@ -8,13 +8,14 @@ import groupTravelPhoto from '../../../assets/group_travel.jpeg';
 import jumpPhoto from '../../../assets/jump.jpeg';
 import graduationPhoto from '../../../assets/graduation.jpeg';
 import { ISectionProps } from "../ISectionProps";
+import useIsMobile from "../../../hooks/useIsMobile";
 
 const SlideShowId = "SlideShowId";
 
 export default function SlideShow(props: ISectionProps) {
   const isActiveClass = props.isActive ? classes.active : "";
   const classNames = classes.About + " " + sectionStyles[props.theme]; 
-  console.debug("SlideShow class names: "+classNames);
+
   return (
     <section
       style={props.style}
@@ -22,22 +23,24 @@ export default function SlideShow(props: ISectionProps) {
       id={slideShowSectionId}
     >
       <h1 className={classes.sthAboutMe + " " + isActiveClass} id={SlideShowId}>Something about me</h1>
-      {createSlidePictures(props.isActive)}
+      {CreateSlidePictures(props.isActive)}
     </section>
   );
 }
 
-function createSlidePictures(isActive: boolean): ReactNode {
+function CreateSlidePictures(isActive: boolean): ReactNode {
+  const isMobile = useIsMobile();
+  const displayCLass = isMobile ? classes.MobileSlide : classes.DesktopSlide;
   const isActiveClass = isActive ? classes.active : "";
 
   return (
     <Slide
       cssClass={classes.slideShow + " " + isActiveClass}
-        autoplay={isActive}>
-        <div className={classes.eachSlideEffect}>
+      autoplay={isActive}>
+        <div className={displayCLass}>
           <div
             style={{
-              width: "30vw",
+              width: isMobile ? "" : "30vw",
               backgroundImage:
                 `url(${graduationPhoto})`,
             }}
@@ -45,7 +48,7 @@ function createSlidePictures(isActive: boolean): ReactNode {
           </div>
           <h2 className={classes.slideTitle}>I am Bialystok's University of Technology graduate.</h2>
         </div>
-        <div className={classes.eachSlideEffect}>
+        <div className={displayCLass}>
           <div
             style={{
               backgroundImage:
@@ -55,7 +58,7 @@ function createSlidePictures(isActive: boolean): ReactNode {
           </div>
           <h2 className={classes.slideTitle}>I love traveling!</h2>
         </div>
-        <div className={classes.eachSlideEffect}>
+        <div className={displayCLass}>
           <div
             style={{
               backgroundImage: `url(${groupTravelPhoto})`,
@@ -64,7 +67,7 @@ function createSlidePictures(isActive: boolean): ReactNode {
           </div>
           <h2 className={classes.slideTitle}>I usually travel with friends.</h2>
         </div>
-        <div className={classes.eachSlideEffect}>
+        <div className={displayCLass}>
           <div
             style={{
               backgroundImage: `url(${jumpPhoto})`,

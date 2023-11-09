@@ -19,7 +19,7 @@
     flex-direction: row;
 }
 
-.eachSlideEffect > div {
+.DesktopSlide > div {
     display: block;
     max-height:70vh;
     max-width:70vw;
@@ -27,6 +27,18 @@
     width:auto;
     background-size: cover;
     margin: auto;
+  }
+
+  .MobileSlide > div {
+    display: block;
+    max-height:50vh;
+    max-width:70vw;
+    height:50vh;
+    width: 70vw;
+    background-size: cover;
+    margin: auto;
+    background: no-repeat center;
+    background-size: cover;
   }
 
   .slideTitle {

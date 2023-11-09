@@ -1,20 +1,26 @@
 .contactSection {
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding: 30px;
     height: 50vh;
+    margin: auto;
     justify-content: center;
     transform: translateX(-100vw);
     transition: 1s ease;
+    align-items: center;
 }
 
 .contactSection h1 {
-    font-size: 50px;
+    font-size: 30px;
 
 }
 
+.details {
+    text-align: left;
+}
+
 .details p {
-    font-size: 30px;
+    font-size: 20px;
     margin: 0;
     font-style: italic;
 }

@@ -43,3 +43,10 @@
 .active {
     transform: translateX(0);
 }
+
+.skillsList {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

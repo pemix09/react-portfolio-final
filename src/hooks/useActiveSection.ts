@@ -13,8 +13,6 @@ export default function useActiveSection() {
             sectionsNodes.forEach((section: ChildNode) => {
 
                 if (section instanceof HTMLElement) {
-                    const elementTopPosition = section.offsetTop;
-                    const elementBottomPosition = section.offsetTop + section.offsetHeight;
                     const elementMiddlePosition = section.offsetTop + section.offsetHeight / 2;
                     const endOfScreenPosition = window.scrollY + window.innerHeight - 100;
         

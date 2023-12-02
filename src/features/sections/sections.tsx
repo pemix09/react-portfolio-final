@@ -1,19 +1,21 @@
 import SlideShow, { slideShowSectionId } from "./slideShow/slideShow";
 import Contact, { contactSectionId } from "./contact/contact";
 import Experience, { experienceSectionId } from "./experience/experience";
-import { navBarContainerId } from "../nav-bar/nav-bar-header";
 import { useWaitForElementMount } from "../../hooks/useWaitForElementMount";
 import About, { introductionSectionId } from "./introduction/introduction";
 import useActiveSection from "../../hooks/useActiveSection";
+import { ForwardedRef, forwardRef } from "react";
 
-export default function Sections() {
-  let sectionsStyle: React.CSSProperties = {};
-  let navBar = useWaitForElementMount(navBarContainerId);
+interface SectionsProps {
+  headerRef: any
+}
+
+export const Sections = (props: SectionsProps) => {
+  const sectionsStyle: React.CSSProperties = {};
   const activeSection: string | null = useActiveSection();
-  console.debug("Active section: " + activeSection);
 
-  if (navBar) {
-    sectionsStyle.marginTop = navBar.offsetHeight + 20;
+  if (props.headerRef?.current) {
+    sectionsStyle.marginTop = props.headerRef.current.offsetHeight + 20;
     console.debug("NavBar found, setting margin-top to: " + sectionsStyle.marginTop);
   } else {
     console.debug("NavBar not found, setting default margin-top");
@@ -28,6 +30,6 @@ export default function Sections() {
       <Contact isActive={activeSection === contactSectionId} style={sectionsStyle} theme="dark"/>
     </div>
   );
-}
+};
 
 export const sectionsId = "sectionsId";

@@ -3,9 +3,9 @@ import CodingIcon from "../../../assets/codingIcon.svg";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { navBarContainerId } from "../nav-bar-header";
+import { forwardRef } from "react";
 
-export default function NavBar(props: React.PropsWithChildren) {
+export const NavBar = forwardRef(function (props: any, ref: any) {
   function goToTop() {
     window.scrollTo(0, 0);
   }
@@ -14,7 +14,7 @@ export default function NavBar(props: React.PropsWithChildren) {
     <Navbar
       collapseOnSelect 
       expand="lg"
-      id={navBarContainerId}
+      ref={ref}
       fixed="top"
       bg="dark"
       data-bs-theme="dark"
@@ -34,4 +34,4 @@ export default function NavBar(props: React.PropsWithChildren) {
       </Container>
     </Navbar>
   );
-}
+});

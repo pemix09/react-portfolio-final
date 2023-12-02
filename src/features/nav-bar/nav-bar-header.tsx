@@ -1,17 +1,18 @@
-import NavBar from "./components/nav-bar";
+import { NavBar } from "./components/nav-bar";
 import { slideShowSectionId } from "../sections/slideShow/slideShow";
 import { experienceSectionId } from "../sections/experience/experience";
 import { contactSectionId } from "../sections/contact/contact";
 import useActiveSection from "../../hooks/useActiveSection";
 import Nav from "react-bootstrap/esm/Nav";
 import { introductionSectionId } from "../sections/introduction/introduction";
+import { forwardRef } from "react";
 
-//this component is so called higher-rder component
-export default function NavBarHeader() {
+//this component is so called higher-prder component
+export const NavBarHeader = forwardRef(function (props: any, ref: any) {
   const activeSection: string | null = useActiveSection();
 
   return (
-    <NavBar>
+    <NavBar ref={ref}>
       <Nav.Link
         active={activeSection === introductionSectionId}
         href={`#${introductionSectionId}`}
@@ -38,6 +39,4 @@ export default function NavBarHeader() {
       </Nav.Link>
     </NavBar>
   );
-}
-
-export const navBarContainerId = "navBarContainerId";
+});

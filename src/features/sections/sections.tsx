@@ -4,13 +4,13 @@ import Experience, { experienceSectionId } from "./experience/experience";
 import { useWaitForElementMount } from "../../hooks/useWaitForElementMount";
 import About, { introductionSectionId } from "./introduction/introduction";
 import useActiveSection from "../../hooks/useActiveSection";
-import { ForwardedRef, forwardRef } from "react";
+import { ForwardedRef, forwardRef, memo } from "react";
 
 interface SectionsProps {
   headerRef: any
 }
 
-export const Sections = (props: SectionsProps) => {
+const Sections = (props: SectionsProps) => {
   const sectionsStyle: React.CSSProperties = {};
   const activeSection: string | null = useActiveSection();
 
@@ -33,3 +33,4 @@ export const Sections = (props: SectionsProps) => {
 };
 
 export const sectionsId = "sectionsId";
+export default memo(Sections);
